@@ -1,7 +1,7 @@
 ---
 # This playbook deploys a simple standalone Tomcat 7 ot 8 with JDK 8
 
-- hosts: tomcat-servers
+- hosts: 13.233.190.26
   remote_user: root
   become: yes
   become_method: sudo
@@ -10,5 +10,5 @@
     - debug: var=version
  # choice the tomcat version
   roles:  
-    - { role: tomcat7, when: version == 7 }
+   # - { role: tomcat7, when: version == 7 }
     - { role: tomcat8, when: version == 8 }
